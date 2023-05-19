@@ -5,7 +5,8 @@ from tkinter import *
 
 passgenerator = Tk()
 passgenerator.title("XXSO Password Generator")
-passgenerator.config(width=320, height=300, background="black")
+
+passgenerator.config(width=400, height=350, background="black")
 
 def generate_password():
     if password_lenght.get():
@@ -55,7 +56,7 @@ sonderzeichen_check.grid(row=3, column=0, padx=5, pady=5)
 get_special_chars = Entry(passgenerator, font=("HELVETICA", 12), background="black", foreground="white", width=16,
                           insertbackground="white")
 get_special_chars.insert(END, r'!§$%&/=?+*#><-_(){}')
-get_special_chars.grid(row=3, column=1)
+get_special_chars.grid(row=3, column=1, padx=5, pady=5)
 generate = Button(passgenerator, text="Generate Password", command=generate_password, font=("HELVETICA", 18),
                   background="black", foreground="white", width=20)
 generate.grid(row=4, column=0,columnspan=2, padx=5, pady=5)
