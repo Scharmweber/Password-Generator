@@ -35,37 +35,37 @@ def generate_password():
         show_password_copy = Button(generated_password_frame, text="COPY", font=("HELVETICA", 10),
                                     background="black", foreground="white", width=5, command=copy_password)
         show_password_copy.place(x=240, y=0)
-label1 = Label(passgenerator, text="Stephen Scharmweber", highlightthickness=0, bd=0, background="black", fg="white", font=("HELVETICA", 20))
-label1.grid(row=0, column=0,columnspan=2, padx=5, pady=5)
+label1 = Label(passgenerator, text="Stephen Scharmweber", highlightthickness=0, bd=0, background="black", fg="white", font=("HELVETICA", 16))
+label1.grid(row=0, column=0,columnspan=2, padx=10, pady=10)
 
 var1 = IntVar()
-password_lenght_label = Label(passgenerator, text="PASSWORD LENGTHS", font=("HELVETICA", 12), background="black",
-                              foreground="white")
-password_lenght_label.grid(row=1, column=0, padx=5, pady=5)
+password_lenght_label = Label(passgenerator, text="Length*", font=("HELVETICA", 10), background="black",
+                              foreground="white", width=18)
+password_lenght_label.grid(row=1, column=0, padx=5, pady=5,sticky=NW)
 password_lenght = Entry(passgenerator, font=("HELVETICA", 12), background="black", foreground="white", width=5)
-password_lenght.grid(row=1, column=1, padx=5, pady=5)
+password_lenght.grid(row=1, column=1, padx=5, pady=5,sticky=NW)
 
 numbers_check = Checkbutton(passgenerator, text="Numbers", variable=var1, onvalue=1, offvalue=0, font=("HELVETICA", 10),
                             background="black", foreground="white", selectcolor="black")
-numbers_check.grid(row=2, column=0, padx=5, pady=5)
+numbers_check.grid(row=2, column=0, padx=5, pady=5,sticky=NW)
 var2 = IntVar()
 sonderzeichen_check = Checkbutton(passgenerator, text="Special Characters", variable=var2, onvalue=1, offvalue=0,
                                   font=("HELVETICA", 10), background="black", foreground="white",
                                   selectcolor="black")
-sonderzeichen_check.grid(row=3, column=0, padx=5, pady=5)
-get_special_chars = Entry(passgenerator, font=("HELVETICA", 12), background="black", foreground="white", width=16,
+sonderzeichen_check.grid(row=3, column=0, padx=5, pady=5,sticky=NW)
+get_special_chars = Entry(passgenerator, font=("HELVETICA", 10), background="black", foreground="white", width=16,
                           insertbackground="white")
 get_special_chars.insert(END, r'!§$%&/=?+*#><-_(){}')
-get_special_chars.grid(row=3, column=1, padx=5, pady=5)
+get_special_chars.grid(row=3, column=1, padx=5, pady=5,sticky=NW)
 generate = Button(passgenerator, text="Generate Password", command=generate_password, font=("HELVETICA", 18),
                   background="black", foreground="white", width=20)
-generate.grid(row=4, column=0,columnspan=2, padx=5, pady=5)
+generate.grid(row=4, column=0,columnspan=2, padx=5, pady=5,sticky=NW)
 
 
 
 
 generated_password_frame = LabelFrame(passgenerator, text="Generated password", background="black", foreground="white",
                                       width=290, height=50)
-generated_password_frame.grid(row=5, column=0,columnspan=2, padx=5, pady=5)
+generated_password_frame.grid(row=5, column=0,columnspan=2, padx=5, pady=5,sticky=NW)
 
 passgenerator.mainloop()
